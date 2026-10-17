@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruan Alonso — Projetos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f2fa;--surface:#ffffff;--ink:#241a38;--muted:#5e5476;--line:#d9d0e6;
+  --accent:#ffc83d;--accent-ink:#2a1f00;--warn:#e8622c;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#150f26;--surface:#201738;--ink:#f3ecff;--muted:#b3a7cc;--line:#3a2d5c}
+}
+:root[data-theme="dark"]{--bg:#150f26;--surface:#201738;--ink:#f3ecff;--muted:#b3a7cc;--line:#3a2d5c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--display);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+
+/* hero (sempre escuro, é o entardecer da obra) */
+.hero{position:relative;min-height:92svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:#f3ecff;
+  background:linear-gradient(#1b1236 0%,#43206a 45%,#c8476f 82%,#f08a5d 100%)}
+.hero svg{position:absolute;inset:auto 0 0 0;width:100%;height:50%;opacity:.4}#sky text{display:none}.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:75%;z-index:1;background:linear-gradient(rgba(21,15,38,0),rgba(21,15,38,.92));pointer-events:none}
+.bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px 22px;z-index:3}
+.lang{display:flex;border:2px solid #3a2606;border-radius:10px;overflow:hidden;background:#150f26}
+.lang button{font:700 15px var(--display);padding:10px 16px;border:0;background:transparent;color:#f3ecff;cursor:pointer;min-height:44px}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.tape{width:56px;height:56px;border-radius:10px;border:0;cursor:pointer;
+  background:repeating-linear-gradient(135deg,#ffc83d 0 12px,#21160a 12px 24px);position:relative}
+.tape::after{content:"";position:absolute;inset:14px 12px;background:
+  linear-gradient(#fff 0 0) 0 0/100% 4px no-repeat,linear-gradient(#fff 0 0) 0 50%/100% 4px no-repeat,linear-gradient(#fff 0 0) 0 100%/100% 4px no-repeat}
+.hero-in{position:relative;z-index:2;padding-bottom:84px}
+.tag{font:500 15px var(--mono);color:#e9d9ff;margin:0 0 6px}
+h1{font:800 clamp(52px,13vw,120px)/.95 var(--display);margin:0;letter-spacing:-.03em;text-shadow:0 6px 0 rgba(20,10,40,.45)}
+h1 span{color:var(--accent)}
+.role{display:inline-block;margin:18px 0 26px;padding:14px 22px;background:rgba(21,15,38,.55);border-radius:10px;
+  font:700 clamp(22px,5vw,34px) var(--display);color:#ff8a3d}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font:700 19px var(--display);padding:16px 26px;border-radius:8px;text-decoration:none;border:3px solid var(--accent);display:inline-block}
+.btn.fill{background:var(--accent);color:var(--accent-ink)}
+.btn.line{background:#150f26;color:#fff}
+
+section{padding:76px 0 8px}
+h2{font:800 clamp(30px,6vw,46px)/1.1 var(--display);margin:0 0 10px;letter-spacing:-.02em}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 34px}
+
+/* projetos: cada card é uma placa de obra */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.card{background:var(--surface);border:2px solid var(--line);border-radius:6px;padding:0;display:flex;flex-direction:column;overflow:hidden}
+.card::before{content:"";height:10px;background:repeating-linear-gradient(135deg,var(--accent) 0 10px,#21160a 10px 20px)}
+.card.live{border-color:var(--accent)}
+.card .in{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font:700 23px/1.2 var(--display);margin:0}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.stack{font:400 13.5px var(--mono);color:var(--ink);opacity:.85;margin-top:auto;padding-top:6px}
+.links{display:flex;gap:16px;flex-wrap:wrap;font-weight:700}
+.links a{color:var(--ink);text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center}
+.badge{align-self:flex-start;background:var(--accent);color:var(--accent-ink);font:700 13px var(--display);padding:3px 10px;border-radius:99px}
+
+.about{display:grid;gap:26px;grid-template-columns:1fr}
+@media(min-width:760px){.about{grid-template-columns:1.2fr 1fr}}
+.facts{list-style:none;padding:0;margin:0;border-left:4px solid var(--accent);padding-left:18px;display:grid;gap:12px}
+.facts b{display:block}
+.facts span{color:var(--muted);font-size:15.5px}
+
+footer{padding:70px 0 54px}
+.contact{background:var(--surface);border:2px solid var(--line);border-radius:6px;padding:28px 24px}
+.contact .links{margin-top:14px;font-size:19px}
+small{display:block;margin-top:34px;color:var(--muted);font:400 14px var(--mono)}
+.bg-pick{position:absolute;top:84px;left:22px;z-index:3;display:flex;gap:6px;flex-wrap:wrap}
+.bg-pick button{font:600 13px var(--display);padding:8px 12px;min-height:44px;border-radius:8px;border:2px solid #3a2606;background:#150f26;color:#f3ecff;cursor:pointer}
+.bg-pick button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+@media (prefers-reduced-motion:no-preference){.win{animation:blink 5s infinite steps(1)}@keyframes blink{0%,92%{opacity:1}95%{opacity:.25}100%{opacity:1}}.fk{stroke-dasharray:6 5;animation:flow 1.2s linear infinite}@keyframes flow{to{stroke-dashoffset:-11}}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="bar">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button data-l="pt" aria-pressed="true">PT</button><button data-l="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="tape" href="#projetos" aria-label="Menu"></a>
+  </div>
+  <svg id="sky" viewBox="0 0 800 500" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+  <div class="wrap hero-in">
+    <p class="tag" data-i="tag">// sempre em obras</p>
+    <h1>Ruan <span>Alonso</span></h1>
+    <div class="role" data-i="role">Sistemas, dados e qualidade</div>
+    <div class="cta">
+      <a class="btn fill" href="#projetos" data-i="b1">Projetos</a>
+      <a class="btn line" href="#contato" data-i="b2">Vamos conversar</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="projetos">
+    <h2 data-i="h2">Projetos</h2>
+    <p class="lead" data-i="lead">Tudo que construí para aprender na prática: banco de dados, testes, APIs e front-end. O código está aberto no GitHub.</p>
+    <div class="grid">
+      <article class="card live"><div class="in">
+        <span class="badge" data-i="live">No ar</span>
+        <h3>Helpdesk Angular</h3>
+        <p data-i="p1">Painel de chamados (service desk) com Angular e TypeScript, publicado no GitHub Pages.</p>
+        <div class="links"><a href="https://ruanalonso.github.io/helpdesk-angular" data-i="demo">Ver demo</a><a href="https://github.com/RuanAlonso/helpdesk-angular">GitHub</a></div>
+        <div class="stack">Angular · TypeScript · HTML · CSS</div>
+      </div></article>
+      <article class="card"><div class="in">
+        <h3 data-i="t2">Tuning de PostgreSQL</h3>
+        <p data-i="p2">Dataset sintético de e-commerce, consultas lentas medidas com EXPLAIN ANALYZE antes e depois de criar índices.</p>
+        <div class="links"><a href="https://github.com/RuanAlonso">GitHub</a></div>
+        <div class="stack">PostgreSQL · SQL · Python</div>
+      </div></article>
+      <article class="card"><div class="in">
+        <h3 data-i="t3">Rastreador de bugs e casos de teste</h3>
+        <p data-i="p3">Aplicação web para registrar bugs e organizar casos de teste, com banco SQLite.</p>
+        <div class="links"><a href="https://github.com/RuanAlonso">GitHub</a></div>
+        <div class="stack">Flask · SQLite · Python</div>
+      </div></article>
+      <article class="card"><div class="in">
+        <h3 data-i="t4">Automação de testes de interface</h3>
+        <p data-i="p4">Suíte de testes automatizados que simula o uso real de um site no navegador.</p>
+        <div class="links"><a href="https://github.com/RuanAlonso">GitHub</a></div>
+        <div class="stack">Playwright · Pytest · Python</div>
+      </div></article>
+      <article class="card"><div class="in">
+        <h3 data-i="t5">Documentação de API</h3>
+        <p data-i="p5">Documentação de uma API REST com exemplos de requisição e resposta, testada no Postman.</p>
+        <div class="links"><a href="https://github.com/RuanAlonso">GitHub</a></div>
+        <div class="stack">REST · Postman · Markdown</div>
+      </div></article>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2 data-i="h3">Sobre</h2>
+    <div class="about">
+      <p data-i="about">Venho do suporte técnico e da sustentação de sistemas. Gosto de entender por que algo quebra, achar a causa no dado e deixar o processo mais confiável. Estou cursando Análise e Desenvolvimento de Sistemas e construindo projetos na área de banco de dados, testes e infraestrutura.</p>
+      <ul class="facts">
+        <li><b data-i="f1">Onde</b><span>São José dos Campos, SP · remoto</span></li>
+        <li><b data-i="f2">Estudo</b><span data-i="f2v">Análise e Desenvolvimento de Sistemas (previsão 06/2027)</span></li>
+        <li><b data-i="f3">Idiomas</b><span data-i="f3v">Português nativo, inglês avançado</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer id="contato"><div class="wrap">
+  <div class="contact">
+    <h2 data-i="h4">Vamos conversar</h2>
+    <p class="lead" style="margin:0" data-i="c">Procuro vagas de analista de sistemas, banco de dados ou QA. Me chame no LinkedIn.</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/ruan-oliveira-dev">LinkedIn</a>
+      <a href="https://github.com/RuanAlonso">GitHub</a>
+    </div>
+  </div>
+  <small>© 2026 Ruan Alonso</small>
+</div></footer>
+
+<script>
+var T={pt:{},en:{
+tag:"// always under construction",role:"Systems, data and quality",b1:"Projects",b2:"Let’s talk",h2:"Projects",
+lead:"Everything I built to learn by doing: databases, testing, APIs and front-end. The code is open on GitHub.",
+live:"Live",demo:"View demo",
+p1:"Support ticket dashboard (service desk) built with Angular and TypeScript, deployed on GitHub Pages.",
+t2:"PostgreSQL tuning",p2:"Synthetic e-commerce dataset, slow queries measured with EXPLAIN ANALYZE before and after adding indexes.",
+t3:"Bug and test case tracker",p3:"Web app to log bugs and organize test cases, backed by SQLite.",
+t4:"UI test automation",p4:"Automated test suite that exercises a website in a real browser.",
+t5:"API documentation",p5:"REST API documentation with request and response examples, tested in Postman.",
+h3:"About",about:"I come from technical support and systems maintenance. I like finding out why something broke, tracing it to the data, and making the process more reliable. I’m studying Systems Analysis and Development and building projects in databases, testing and infrastructure.",
+f1:"Where",f2:"Studying",f2v:"Systems Analysis and Development (expected 06/2027)",f3:"Languages",f3v:"Native Portuguese, advanced English",
+h4:"Let’s talk",c:"I’m looking for systems analyst, database or QA roles. Reach out on LinkedIn."}};
+var els=document.querySelectorAll('[data-i]');
+els.forEach(function(e){T.pt[e.dataset.i]=e.textContent});
+function setLang(l){
+  els.forEach(function(e){e.textContent=T[l][e.dataset.i]});
+  document.documentElement.lang=l==='pt'?'pt-BR':'en';
+  document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
+try{var s=localStorage.getItem('lang');if(s==='en')setLang('en')}catch(e){}
+
+/* skyline */
+(function(){
+  var svg=document.getElementById('sky'),h='',x=-10,seed=7;
+  function r(){seed=(seed*9301+49297)%233280;return seed/233280}
+  while(x<820){
+    var w=60+r()*70,bh=120+r()*260,y=500-bh;
+    h+='<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+bh+'" fill="#1a1030"/>';
+    for(var wy=y+16;wy<490;wy+=22)for(var wx=x+10;wx<x+w-12;wx+=18)
+      if(r()>.62)h+='<rect class="win" x="'+wx+'" y="'+wy+'" width="7" height="10" fill="#ffc83d" opacity=".85"/>';
+    x+=w+4;
+  }
+  h+='<g stroke="#0e0820" stroke-width="5" fill="none"><path d="M610 500V120M540 120H760M610 120L560 120M740 120V190"/></g>';
+  h+='<rect y="486" width="800" height="14" fill="#120a24"/>';
+  svg.innerHTML=h;
+})();
+(function(){
+  var svg=document.getElementById('sky'),city=svg.innerHTML,seed=11;
+  function r(){seed=(seed*9301+49297)%233280;return seed/233280}
+  function db(){
+    var D=[['clientes',['id','nome','email','telefone','cidade','estado','criado_em','ativo']],
+      ['pedidos',['id','cliente_id','total','status','data','frete','cupom','pagamento','endereco','obs','atualizado']],
+      ['itens',['id','pedido_id','produto_id','qtd','preco','desconto']],
+      ['produtos',['id','nome','sku','preco','estoque','categoria_id','ativo','criado_em','peso','marca']],
+      ['categorias',['id','nome','pai']]];
+    var h='<rect y="486" width="800" height="14" fill="#120a24"/>',P={},x=14;
+    D.forEach(function(t){
+      var ht=26+t[1].length*20+8,top=486-ht;P[t[0]]={x:x,top:top};
+      h+='<rect x="'+x+'" y="'+top+'" width="140" height="'+ht+'" fill="#1a1030" stroke="#4a3578" stroke-width="1.5"/>';
+      h+='<rect x="'+x+'" y="'+top+'" width="140" height="26" fill="#2d1b57"/>';
+      h+='<text x="'+(x+10)+'" y="'+(top+18)+'" font-family="IBM Plex Mono,monospace" font-size="13" font-weight="500" fill="#ffc83d">'+t[0]+'</text>';
+      t[1].forEach(function(c,i){
+        var y=top+26+i*20;
+        if(i)h+='<line x1="'+x+'" x2="'+(x+140)+'" y1="'+y+'" y2="'+y+'" stroke="#2a1d4a"/>';
+        var fk=/_id$|categoria_id/.test(c),pk=c==='id';
+        if(pk||fk)h+='<circle cx="'+(x+12)+'" cy="'+(y+11)+'" r="3.5" fill="'+(pk?'#ffc83d':'#ff8a3d')+'"/>';
+        h+='<text x="'+(x+24)+'" y="'+(y+14)+'" font-family="IBM Plex Mono,monospace" font-size="11" fill="#b9a6e8">'+c+'</text>';
+      });
+      t.row=function(c){return t[1].indexOf(c)};
+      P[t[0]].r=t.row;P[t[0]].w=140;x+=150;
+    });
+    function yy(n,c){return P[n].top+26+P[n].r(c)*20+11}
+    [['itens','pedido_id','pedidos'],['itens','produto_id','produtos'],['pedidos','cliente_id','clientes'],['produtos','categoria_id','categorias']].forEach(function(e){
+      var a=P[e[0]],b=P[e[2]],right=b.x>a.x,sx=right?a.x+140:a.x,ex=right?b.x:b.x+140,sy=yy(e[0],e[1]),ey=yy(e[2],'id'),up=Math.min(sy,ey)-40;
+      h+='<path class="fk" d="M'+sx+' '+sy+' C'+sx+' '+up+' '+ex+' '+up+' '+ex+' '+ey+'" fill="none" stroke="#ff8a3d" stroke-width="2"/>';
+    });
+    return h;
+  }
+  function noc(){
+    var h='<rect y="130" width="800" height="370" fill="#0c0718"/><rect y="130" width="800" height="3" fill="#ffc83d" opacity=".6"/>';
+    for(var row=0;row<3;row++)for(var col=0;col<4;col++){
+      var x=21+col*194,y=150+row*110,al=(row===1&&col===2),k=(row*4+col)%4,c;
+      h+='<rect'+(al?' class="win"':'')+' x="'+x+'" y="'+y+'" width="184" height="100" rx="3" fill="#120a24" stroke="'+(al?'#ff5a5f':'#3a2d5c')+'" stroke-width="2"/>';
+      h+='<rect x="'+(x+8)+'" y="'+(y+9)+'" width="52" height="5" rx="2" fill="#7e6aa8"/>';
+      h+='<circle cx="'+(x+170)+'" cy="'+(y+12)+'" r="4" fill="'+(al?'#ff5a5f':(r()>.8?'#ffc83d':'#4ade80'))+'"/>';
+      if(k===0){var p='';for(var i=0;i<12;i++)p+=(x+10+i*15)+','+(y+36+r()*52)+' ';h+='<polyline points="'+p+'" fill="none" stroke="#ffc83d" stroke-width="2"/>';}
+      if(k===1)for(var j=0;j<14;j++){var bh=10+r()*50;h+='<rect x="'+(x+10+j*12)+'" y="'+(y+90-bh)+'" width="8" height="'+bh+'" fill="#a78bfa"/>';}
+      if(k===2)for(var a=0;a<3;a++)for(var b=0;b<9;b++){c=r();h+='<circle cx="'+(x+18+b*18)+'" cy="'+(y+38+a*18)+'" r="5" fill="'+(c>.9?'#ff5a5f':c>.78?'#ffc83d':'#4ade80')+'"/>';}
+      if(k===3)h+='<text x="'+(x+12)+'" y="'+(y+72)+'" font-family="Bricolage Grotesque,sans-serif" font-size="34" font-weight="800" fill="#ffc83d">'+(99+r()).toFixed(1)+'%</text>';
+    }
+    return h+'<rect y="486" width="800" height="14" fill="#120a24"/>';
+  }
+  function set(m){
+    svg.innerHTML=m==='db'?db():m==='noc'?noc():city;
+    document.querySelectorAll('.bg-pick button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});
+  }
+  document.querySelectorAll('.bg-pick button').forEach(function(b){b.onclick=function(){set(b.dataset.m)}});
+  set('noc');
+})();
+</script>
+</body>
+</html>
