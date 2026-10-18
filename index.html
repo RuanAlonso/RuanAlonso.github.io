@@ -78,6 +78,25 @@ h2{font:800 clamp(30px,6vw,46px)/1.1 var(--display);margin:0 0 10px;letter-spaci
 .facts b{display:block}
 .facts span{color:var(--muted);font-size:15.5px}
 
+.exp-h{font:800 clamp(24px,5vw,32px)/1.1 var(--display);margin:44px 0 16px;letter-spacing:-.02em}
+.exp{display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:760px){.exp{grid-template-columns:1fr 1.25fr}}
+.job{background:var(--surface);border:2px solid var(--line);border-radius:6px;padding:20px 22px}
+.job h4{font:700 22px/1.2 var(--display);margin:0}
+.job .meta{font:400 14px var(--mono);color:var(--muted);margin:4px 0 10px}
+.job p{margin:0;color:var(--muted);font-size:16px}
+.roles{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:14px}
+.roles li{font-size:16px;color:var(--muted);border-left:4px solid var(--accent);padding-left:14px}
+.roles b{color:var(--ink)}
+.roles .when{font:400 13px var(--mono);margin-left:6px}
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:34px}
+.stat{background:var(--surface);border:2px solid var(--line);border-top:8px solid var(--accent);border-radius:6px;padding:14px 18px 16px}
+.stat b{display:block;font:800 clamp(30px,6vw,40px)/1.1 var(--display);letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:15px;line-height:1.4;display:block;margin-top:4px}
+.pts{margin:8px 0 0;padding-left:20px;color:var(--muted);display:grid;gap:6px;font-size:16px}
+.roles .pts{margin-top:6px;font-size:15.5px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px!important}
+.chips span{font:500 13px var(--mono);color:var(--ink);border:1.5px solid var(--line);border-radius:99px;padding:3px 10px}
 footer{padding:70px 0 54px}
 .contact{background:var(--surface);border:2px solid var(--line);border-radius:6px;padding:28px 24px}
 .contact .links{margin-top:14px;font-size:19px}
@@ -156,12 +175,57 @@ small{display:block;margin-top:34px;color:var(--muted);font:400 14px var(--mono)
   <section id="sobre">
     <h2 data-i="h3">Sobre</h2>
     <div class="about">
-      <p data-i="about">Venho do suporte técnico e da sustentação de sistemas. Gosto de entender por que algo quebra, achar a causa no dado e deixar o processo mais confiável. Estou cursando Análise e Desenvolvimento de Sistemas e construindo projetos na área de banco de dados, testes e infraestrutura.</p>
+      <p data-i="about">Tenho experiência em liderança e treinamento de times de atendimento (Amazon) e em suporte e sustentação de uma plataforma SaaS (Climber RMS). Gosto de entender por que algo quebra, achar a causa no dado e deixar o processo mais confiável. Hoje estudo Análise e Desenvolvimento de Sistemas e construo projetos em banco de dados, testes e integrações, para atuar como analista de sistemas, DBA ou QA.</p>
       <ul class="facts">
         <li><b data-i="f1">Onde</b><span>São José dos Campos, SP · remoto</span></li>
         <li><b data-i="f2">Estudo</b><span data-i="f2v">Análise e Desenvolvimento de Sistemas (previsão 06/2027)</span></li>
+        <li><b data-i="f4">Pós e MBA</b><span data-i="f4v">Engenharia de Software, Data Science e Gestão de Projetos</span></li>
         <li><b data-i="f3">Idiomas</b><span data-i="f3v">Português nativo, inglês avançado</span></li>
       </ul>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>150–200</b><span data-i="s1">colaboradores treinados na Amazon</span></div>
+      <div class="stat"><b>90%+</b><span data-i="s2">de CSAT em uma equipe de 20 a 30 atendentes</span></div>
+      <div class="stat"><b>60–70%</b><span data-i="s3">dos chamados resolvidos sem escalar, na Climber RMS</span></div>
+      <div class="stat"><b>3–6 h</b><span data-i="s4">por semana economizadas com relatórios automatizados</span></div>
+    </div>
+    <h3 class="exp-h" data-i="exp">Experiência</h3>
+    <div class="exp">
+      <div class="job">
+        <h4>Climber RMS</h4>
+        <p class="meta"><span data-i="j1r">Analista de Suporte N1</span> · <span data-i="j1w">fev/2026 – jul/2026</span></p>
+        <ul class="pts">
+          <li data-i="j1a">Atendi de 15 a 25 chamados por dia, mantendo o SLA de primeira resposta acima de 90%.</li>
+          <li data-i="j1b">Resolvi de 60 a 70% dos chamados sem escalar para o N2.</li>
+          <li data-i="j1c">Reduzi de 15 a 25% os escalonamentos recorrentes ao documentar soluções em uma base de conhecimento.</li>
+          <li data-i="j1d">Validei integrações entre sistemas com Postman e abri bugs detalhados no Jira para o time de desenvolvimento.</li>
+        </ul>
+        <p class="chips"><span>SQL</span><span>Postman</span><span>Jira</span><span>APIs REST</span></p>
+      </div>
+      <div class="job">
+        <h4>Amazon</h4>
+        <p class="meta" data-i="j2w">Remoto · out/2022 – fev/2026</p>
+        <ul class="roles">
+          <li><b>Training and Development Specialist</b> <span class="when" data-i="r3w">set/2025 – fev/2026</span>
+            <ul class="pts">
+              <li data-i="r3a">Liderei uma equipe de 20 a 30 atendentes, acompanhando CSAT, TMA e qualidade.</li>
+              <li data-i="r3b">Mantive o CSAT da equipe acima de 90%.</li>
+              <li data-i="r3c">Reduzi o TMA de 5 a 10% com coaching individual e feedback semanal.</li>
+            </ul></li>
+          <li><b>Training Assistant</b> <span class="when" data-i="r2w">out/2024 – set/2025</span>
+            <ul class="pts">
+              <li data-i="r2a">Treinei de 150 a 200 colaboradores ao longo do período.</li>
+              <li data-i="r2b">Automatizei relatórios com Python e Power BI, economizando de 3 a 6 horas por semana de trabalho manual.</li>
+              <li data-i="r2c">Reduzi de 10 a 20% o tempo de ramp-up de novos atendentes.</li>
+            </ul></li>
+          <li><b>Customer Service Team Captain</b> <span class="when" data-i="r1w">out/2022 – set/2025</span>
+            <ul class="pts">
+              <li data-i="r1a">Liderei a equipe no atendimento por telefone e chat, revisei materiais de apoio e scripts e participei da melhoria dos processos.</li>
+              <li data-i="r1b">Apliquei treinamentos, monitorei atendimentos, dei feedback e reportei resultados à gestão.</li>
+            </ul></li>
+        </ul>
+        <p class="chips"><span>Python</span><span>Power BI</span><span>Excel</span></p>
+      </div>
     </div>
   </section>
 </main>
@@ -169,8 +233,9 @@ small{display:block;margin-top:34px;color:var(--muted);font:400 14px var(--mono)
 <footer id="contato"><div class="wrap">
   <div class="contact">
     <h2 data-i="h4">Vamos conversar</h2>
-    <p class="lead" style="margin:0" data-i="c">Procuro vagas de analista de sistemas, banco de dados ou QA. Me chame no LinkedIn.</p>
+    <p class="lead" style="margin:0" data-i="c">Procuro vagas de analista de sistemas, banco de dados ou QA. Me chame por e-mail ou LinkedIn.</p>
     <div class="links">
+      <a id="mail" href="#contato">E-mail</a>
       <a href="https://www.linkedin.com/in/ruan-oliveira-dev">LinkedIn</a>
       <a href="https://github.com/RuanAlonso">GitHub</a>
     </div>
@@ -188,9 +253,9 @@ t2:"PostgreSQL tuning",p2:"Fictional e-commerce database with 300k orders. Slow 
 t3:"Bug and test case tracker",p3:"Web app to log bugs and test cases, with a dashboard by status and severity, filters and status updates. SQLite database.",
 t4:"UI test automation",p4:"12 automated tests covering login, products, cart and checkout, written with Playwright and Pytest using the Page Object pattern and run in a real browser.",
 t5:"API documentation",p5:"Documentation for a fictional hotel reservations REST API: 6 endpoints, a Postman collection organized in folders, and QA test cases.",
-t6:"Integration SLA monitor (NOC)",p6:"Chrome and Edge extension that checks every 30 minutes whether hotel integrations stopped sending data, with an incident dashboard and SLA-based priority. Sanitized version of a tool used in production.",h3:"About",about:"I come from technical support and systems maintenance. I like finding out why something broke, tracing it to the data, and making the process more reliable. I’m studying Systems Analysis and Development and building projects in databases, testing and infrastructure.",
+t6:"Integration SLA monitor (NOC)",p6:"Chrome and Edge extension that checks every 30 minutes whether hotel integrations stopped sending data, with an incident dashboard and SLA-based priority. Sanitized version of a tool used in production.",h3:"About",f4:"Postgrad and MBA",f4v:"Software Engineering, Data Science and Project Management",exp:"Experience",s1:"employees trained at Amazon",s2:"CSAT on a team of 20 to 30 agents",s3:"of tickets resolved without escalating, at Climber RMS",s4:"saved per week with automated reports",j1a:"Handled 15 to 25 tickets a day, keeping first-response SLA above 90%.",j1b:"Resolved 60 to 70% of tickets without escalating to L2.",j1c:"Cut recurring escalations by 15 to 25% by documenting solutions in a knowledge base.",j1d:"Validated integrations between systems with Postman and filed detailed bugs in Jira for the development team.",r3a:"Led a team of 20 to 30 agents, tracking CSAT, AHT and quality.",r3b:"Kept the team’s CSAT above 90%.",r3c:"Reduced AHT by 5 to 10% with one-on-one coaching and weekly feedback.",r2a:"Trained 150 to 200 employees over the period.",r2b:"Automated reports with Python and Power BI, saving 3 to 6 hours a week of manual work.",r2c:"Cut new-hire ramp-up time by 10 to 20%.",r1a:"Led the team on phone and chat support, reviewed support materials and scripts, and helped improve processes.",r1b:"Delivered training, monitored interactions, gave feedback and reported results to management.",j1r:"Level 1 Support Analyst",j1w:"Feb 2026 – Jul 2026",j2w:"Remote · Oct 2022 – Feb 2026",r1w:"Oct 2022 – Sep 2025",r2w:"Oct 2024 – Sep 2025",r3w:"Sep 2025 – Feb 2026",about:"I have experience leading and training customer service teams (Amazon) and in support and maintenance of a SaaS platform (Climber RMS). I like finding out why something broke, tracing it to the data, and making the process more reliable. I’m now studying Systems Analysis and Development and building projects in databases, testing and integrations, to work as a systems analyst, DBA or QA.",
 f1:"Where",f2:"Studying",f2v:"Systems Analysis and Development (expected 06/2027)",f3:"Languages",f3v:"Native Portuguese, advanced English",
-h4:"Let’s talk",c:"I’m looking for systems analyst, database or QA roles. Reach out on LinkedIn."}};
+h4:"Let’s talk",c:"I’m looking for systems analyst, database or QA roles. Reach out by e-mail or LinkedIn."}};
 var els=document.querySelectorAll('[data-i]');
 els.forEach(function(e){T.pt[e.dataset.i]=e.textContent});
 function setLang(l){
@@ -269,6 +334,10 @@ try{var s=localStorage.getItem('lang');if(s==='en')setLang('en')}catch(e){}
   }
   document.querySelectorAll('.bg-pick button').forEach(function(b){b.onclick=function(){set(b.dataset.m)}});
   set('noc');
+})();
+(function(){
+  var a=document.getElementById('mail'),addr=['ruanoa','hotmail.com'].join('@');
+  a.href='mailto:'+addr;a.textContent=addr;
 })();
 </script>
 </body>
